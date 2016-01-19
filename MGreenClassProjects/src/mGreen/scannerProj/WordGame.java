@@ -1,3 +1,9 @@
+/* 
+ * Matthew Green
+ * COP 2253 Java Programming
+ * WordGame project
+ */
+
 package mGreen.scannerProj;
 
 import java.util.Scanner;
@@ -107,6 +113,18 @@ public class WordGame {
 		}
 		
 		return count;
+	}
+	
+	public static double round (double in){
+		
+		double rounded = in;
+		
+		rounded *= 100;
+		
+		
+		
+		return rounded;
+		
 	}
 	
 }
