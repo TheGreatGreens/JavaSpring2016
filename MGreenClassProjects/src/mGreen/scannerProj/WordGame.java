@@ -87,7 +87,9 @@ public class WordGame {
 		
 		print("A Pensacola resident was devastated when their most beloved pet, " + petName + ", died in a vehicular accident.");
 		print(name + ", a " + age + " year-old " + profession + " was incredibly disheartened to hear their pet had driven into");
-		print("oncoming traffic, totaling the $" + carCost + " vehicle, and ultimately losing their life. In other news,");
+		System.out.print("oncoming traffic, totaling the $");
+		System.out.printf("%6.2f", carCost);
+		print(" vehicle, and ultimately losing their life. In other news,");
 		print("'Florida Man' has stuck again, this time murdering his wife with a squirrel. More on that story at 11.");		
 		
 		scannerDump = "";
@@ -113,18 +115,6 @@ public class WordGame {
 		}
 		
 		return count;
-	}
-	
-	public static double round (double in){
-		
-		double rounded = in;
-		
-		rounded *= 100;
-		
-		
-		
-		return rounded;
-		
 	}
 	
 }
