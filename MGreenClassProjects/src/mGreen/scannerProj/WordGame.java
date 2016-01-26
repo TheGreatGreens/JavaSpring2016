@@ -19,6 +19,7 @@ public class WordGame {
 		String profession = "";
 		String petName = "";
 		double carPrice = Double.MIN_VALUE;
+		byte nameBreak;
 		
 		String scannerDump = "";  //just a dump var for when a new line char remains in scanner after number input 
 		
@@ -34,7 +35,9 @@ public class WordGame {
 			}
 		}
 		
-		print("Hi, " + name + ". To continue, I'll need you to enter some information.");
+		nameBreak = getNameBreak(name);
+		
+		print("Hi, " + name.substring(0,nameBreak) + ". To continue, I'll need you to enter some information.");
 		
 		print("What is your age?");
 		while (age==Integer.MIN_VALUE){
@@ -89,8 +92,10 @@ public class WordGame {
 		print(name + ", a " + age + " year-old " + profession + " was incredibly disheartened to hear their pet had driven into");
 		System.out.print("oncoming traffic, totaling the $");
 		System.out.printf("%6.2f", carCost);
-		print(" vehicle, and ultimately losing their life. In other news,");
-		print("'Florida Man' has stuck again, this time murdering his wife with a squirrel. More on that story at 11.");		
+		print(" vehicle, and ultimately losing their life. When asked about the incedent, " + name.substring(0,nameBreak) + " had this to say:");
+		print("'I had no idea that " + petName + " had found out how to drive; all of this is a shock and I just want " + petName + " back.'");
+		print("The " + name.substring(nameBreak + 1) + " family is still in mourning over their loss.");
+		print("In other news, 'Florida Man' has stuck again, this time murdering his wife with a squirrel. More on that story at 11.");		
 		
 		scannerDump = "";
 		print(scannerDump);					//only necessary to manage eclipse "unused variable" warning.
@@ -115,6 +120,22 @@ public class WordGame {
 		}
 		
 		return count;
+	}
+	
+	public static byte getNameBreak(String name){
+		
+		byte nameBreak = 0;
+		
+		for (byte i = 0; i < name.length(); i++){
+			
+			if (name.charAt(i) == ' '){
+				nameBreak = i;
+				break;
+			}
+			
+		}
+
+		return nameBreak;
 	}
 	
 }
